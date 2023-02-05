@@ -8,5 +8,5 @@ SCW = \sum_{i=1}^p{W_iSCW_i}
 donde
 
 ```math
-SCW_i = \sum_{k=1}^L \fraq{x_{\dot\dot}}{x_{\dot k}}
+SCW_i = \sum_{k=1}^L 
 ```
