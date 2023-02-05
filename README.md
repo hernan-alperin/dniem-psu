@@ -61,11 +61,10 @@ el algoritmo es muy dependiente de la asignación de clusters inicial.
 La suma de cuadrados intracluster que utiliza el método “hill climbing” 
 es la suma de cuadrados de muestreo PPS, a saber
 
-When $a \ne 0$, there are two solutions to $(ax^2 + bx + c = 0)$ and they are 
-$$ x = {-b \pm \sqrt{b^2-4ac} \over 2a} $$
-
 ```math
 
-SCW = \sum{W_iSCW_i} 
+SCW = \sum_{i=1}^p{W_iSCW_i} 
+
+SCW_i = \sum_{k=1}^L\frac{x_{\dot\dot}}{x_{\dot k}}\sum_{j=1}^{N_k}\frac{x_{jk}}{x_{\dot k}}\(\)
 
 ```
