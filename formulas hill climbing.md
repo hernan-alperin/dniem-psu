@@ -10,7 +10,7 @@ donde
 ```math
 SCW_i = \sum_{k=1}^L \frac{x_{\cdot\cdot}}{x_{\cdot k}}
         \sum_{j=1}^{N_k} \frac{x_{jk}}{x_{\cdot k}}
-        \bigg( \frac{x_{\cdot k}}{x_{jk}} y_{ijk} - y_{i\cdot k} \bigg)^2
+        \left( \frac{x_{\cdot k}}{x_{jk}} y_{ijk} - y_{i\cdot k} \right)^2
 ```
 
 y 
@@ -22,7 +22,7 @@ $`x_{jk}`$, la medida de tamaño del $j$-ésimo radio en el $k$-ésimo cluster,
 
 ```math
 x_{\cdot k} = \sum_{j=1}^{N_k} x_{jk};
-\qqad
+\qquad
 x_{\cdot\cdot} = \sum_{k=1}^L \sum_{j=1}^{N_k} x_{jk}
 
 ```
