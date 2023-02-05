@@ -8,5 +8,5 @@ SCW = \sum_{i=1}^p{W_iSCW_i}
 donde
 
 ```math
-SCW_i = \sum_{k=1}^L 
+SCW_i = \sum_{k=1}^L \frac12
 ```
