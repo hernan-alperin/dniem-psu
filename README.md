@@ -60,8 +60,42 @@ que deben incorporarse explícitamente las restricciones de continuidad y tamañ
 el algoritmo es muy dependiente de la asignación de clusters inicial.
 La suma de cuadrados intracluster que utiliza el método “hill climbing” 
 es la suma de cuadrados de muestreo PPS, 
-ver [fórmulas](https://gitlab.indec.gob.ar/halperin/dniem-psu/blob/master/formulas%20hill%20climbing.md)
+ver [fórmulas](https://gitlab.indec.gob.ar/halperin/dniem-psu/blob/master/formulas%20hill%20climbing.md).
 
+La variante ensayada para armar clusters de radios fue utilizar el algoritmo “Hill Climbing” 
+con restricciones de tamaño, contigüidad y compacticidad para mejorar 
+la heterogeneidad de los clusters resultantes 
+de los métodos de Elliot (EHill) y de MaxP + programa lineal (MaxHill). 
+Se eligieron estos métodos como inicio del “Hill Climbing” 
+porque forman relativamente pocos clusters discontinuos.
 
+## Método de Elliot
+
+### Elliott, M. R. (2011). A simple method to generate equal-sized homogenous strata or clusters for population-based sampling. 
+
+El algoritmo parte de un radio inicial elegido por aleatoriamente, 
+y se asigna al primer cluster. 
+Se añaden radios vecinos del radio inicial, seleccionados al azar, 
+hasta que se alcance el mínimo de número de viviendas deseadas en el cluster o 
+hasta que todos los radios vecinos hayan sido añadidos. 
+Si el radio inicial se queda sin vecinos se añaden los radios más cercanos, 
+tomando como medida de cercanía la distancia de los centroides de cada radio al radio inicial.
+Una vez que el cluster llega al tamaño mínimo de viviendas, 
+se selecciona un nuevo radio inicial y se reitera el proceso de selección de radios 
+entre los disponibles. 
+Un radio no puede pertenecer a más de un cluster.
+La creación de clusters continúa hasta que no haya más radios disponibles o 
+hasta que los radios restantes no puedan cumplir el requerimiento para conformar un nuevo cluster.
+Este proceso se itera n = 300 veces, es decir, 
+se obtienen n configuraciones de clustering 
+(notar que el número de clusters puede variar en cada iteración, pues no es conocido a priori). 
+
+Para cada una se calcula la suma de cuadrados intraclase, definida como
+
+```math
+SCW = \sum_{k=1}^L \frac{x_{\cdot\cdot}}{x_{\cdot k}}
+      \sum_{j=1}^{N_k} \frac{x_{jk}}{x_{\cdot k}}
+      \left( \frac{x_{\cdot k}}{x_{jk}} y_{jk} - y_{i\cdot k} \right)^2
+```
 
 
