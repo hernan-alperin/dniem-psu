@@ -59,6 +59,9 @@ que deben incorporarse explícitamente las restricciones de continuidad y tamañ
 (solo puede brindarse un proxy con la condición de compacticidad) y 
 el algoritmo es muy dependiente de la asignación de clusters inicial.
 La suma de cuadrados intracluster que utiliza el método “hill climbing” 
-es la suma de cuadrados de muestreo PPS, a saber
+es la suma de cuadrados de muestreo PPS, 
+ver [fórmulas](https://gitlab.indec.gob.ar/halperin/dniem-psu/blob/master/formulas%20hill%20climbing.md)
+
+
 
 
