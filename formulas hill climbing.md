@@ -10,5 +10,5 @@ donde
 ```math
 SCW_i = \sum_{k=1}^L \frac{x_{\cdot\cdot}}{x_{\cdot k}}
         \sum_{j=1}^{N_k} \frac{x_{jk}}{x_{\cdot k}}
-        \Big( \frac12 \Big)
+        \bigg( \frac12 \bigg)
 ```
