@@ -16,15 +16,21 @@ SCW_i = \sum_{k=1}^L \frac{x_{\cdot\cdot}}{x_{\cdot k}}
 y 
 $`p`$ es la cantidad de variables a considerar en la suma de cuadrados,
 $`L`$, la cantidad de clusters a formar,
-$`N_k`$, la cantidad de radios en el $k$-ésimo cluster,
+$`N_k`$, la cantidad de radios en el $`k`$-ésimo cluster,
 $`W_i`$, el peso relativo de la $i$-ésima variable,
-$`x_{jk}`$, la medida de tamaño del $j$-ésimo radio en el $k$-ésimo cluster,
+$`x_{jk}`$, la medida de tamaño del $`j`$-ésimo radio en el $`k`$-ésimo cluster,
 
 ```math
 x_{\cdot k} = \sum_{j=1}^{N_k} x_{jk}
 \quad
-\mathrm{, y}
+\mathrm{,}
 \qquad
 x_{\cdot\cdot} = \sum_{k=1}^L \sum_{j=1}^{N_k} x_{jk}
-
+\quad
+\mathrm{,}
+```
+$`Y_{ijk}`$, el valor observado para la $`i`$-ésima variable 
+del $`j`$-ésimo radio del cluster $`k`$,
+```math
+y_{i\cdot k} = \sum_{j=1}^{N_k} y_{ijk}
 ```
