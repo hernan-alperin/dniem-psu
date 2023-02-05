@@ -22,8 +22,8 @@ $`x_{jk}`$, la medida de tamaño del $j$-ésimo radio en el $k$-ésimo cluster,
 
 ```math
 x_{\cdot k} = \sum_{j=1}^{N_k} x_{jk}
-\hspace
-\mbox{, y}
+\quad
+\mathrm{, y}
 \qquad
 x_{\cdot\cdot} = \sum_{k=1}^L \sum_{j=1}^{N_k} x_{jk}
 
