@@ -61,4 +61,4 @@ el algoritmo es muy dependiente de la asignación de clusters inicial.
 La suma de cuadrados intracluster que utiliza el método “hill climbing” 
 es la suma de cuadrados de muestreo PPS, a saber
 
-
+$$ SCW = \sum{W_iSCW_i}$$
