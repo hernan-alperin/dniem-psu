@@ -41,5 +41,24 @@ los clusters de maxp que pasaron por el programa lineal,
 lo que mejora la uniformidad del tamaño de estos últimos, 
 pero rompe la contigüidad brindada por el maxpl.
 
+## Hill Climbing
+
+### Drew, J. D., Belanger, Y., & Foy, P. (1985). Stratification of the Canadian Labour Force Survey. 
+
+El método de “Hill Climbing” de Friedman y Rubin es un algoritmo que busca 
+formar clusters maximizando una medida de heterogeneidad intra-cluster 
+(suma de cuadrados intra-cluster) mediante un algoritmo “greedy”: 
+dada una asignación de clusters a los radios, se recorre todos los radios y 
+se intenta, para cada radio cambiar su cluster a otro de tal forma de 
+obtener el máximo aumento en la heterogeneidad global. 
+El algoritmo se detiene cuando no hay ningún cambio de cluster para ningún radio 
+que mejore la medida de heterogeneidad. 
+Este algoritmo tiene la ventaja de que intenta maximizar 
+la heterogeneidad intra-cluster, pero las desventajas de 
+que deben incorporarse explícitamente las restricciones de continuidad y tamaño 
+(solo puede brindarse un proxy con la condición de compacticidad) y 
+el algoritmo es muy dependiente de la asignación de clusters inicial.
+La suma de cuadrados intracluster que utiliza el método “hill climbing” 
+es la suma de cuadrados de muestreo PPS, a saber
 
 
