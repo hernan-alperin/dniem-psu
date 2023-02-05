@@ -5,6 +5,8 @@ es la suma de cuadrados de muestreo PPS, a saber
 SCW = \sum_{i=1}^p{W_iSCW_i} 
 ```
 
+donde
+
 ```math
 SCW_i = \sum_{k=1}^L \frac{x_{\dot\dot}}{x_{\dot k}}
 ```
