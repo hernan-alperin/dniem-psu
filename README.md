@@ -62,10 +62,10 @@ La suma de cuadrados intracluster que utiliza el método “hill climbing”
 es la suma de cuadrados de muestreo PPS, 
 ver [fórmulas](https://gitlab.indec.gob.ar/halperin/dniem-psu/blob/master/formulas%20hill%20climbing.md).
 
-La variante ensayada para armar clusters de radios fue utilizar el algoritmo “Hill Climbing” 
-con restricciones de tamaño, contigüidad y compacticidad para mejorar 
-la heterogeneidad de los clusters resultantes 
-de los métodos de Elliot (EHill) y de MaxP + programa lineal (MaxHill). 
+La variante ensayada para armar clusters de radios 
+fue utilizar el algoritmo “Hill Climbing” con restricciones de 
+tamaño, contigüidad y compacticidad para mejorar la heterogeneidad de los clusters 
+resultantes de los métodos de Elliot (**EHill**) y de MaxP + programa lineal (**MaxHill**). 
 Se eligieron estos métodos como inicio del “Hill Climbing” 
 porque forman relativamente pocos clusters discontinuos.
 
@@ -118,12 +118,18 @@ del $`j`$-ésimo radio del cluster $`k`$,
 y_{\cdot k} = \sum_{j=1}^{N_k} y_{jk}
 ```
 
-La variante ensayada para armar clusters de radios 
-fue utilizar el algoritmo “Hill Climbing” con restricciones de 
-tamaño, contigüidad y compacticidad para mejorar la heterogeneidad de los clusters 
-resultantes de los métodos de Elliot (**EHill**) y de MaxP + programa lineal (**MaxHill**). 
-Se eligieron estos métodos como inicio del “Hill Climbing” 
-porque forman relativamente pocos clusters discontinuos.
+Finalmente, se comparan las SCW y 
+se selecciona la configuración de clustering con mayor heterogeneidad.
+
+
+## Método de Elliot - radios vecinos
+
+Este método (ElliotCont) es similar al de Elliot, pero asegura que mientras sea posible, 
+el radio que se añade es vecino del cluster. 
+Una vez no haya clusters vecinos disponibles, 
+toma el más cercano según la distancia al centroide del radio inicial.
+
+
 
 ## Método de Hilbert
 ### Kali, J., Krenzke, T., Chen, Y., Chen, A., & Green, J. Evaluation of Methods to Form Segments from Census Blocks in Area Sample Designs.
