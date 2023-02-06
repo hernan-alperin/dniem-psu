@@ -140,3 +140,17 @@ una lista de bloques vecinos identificados por un número índice
 (Índice de Hilbert).
 
 ![Figura. Método de Hilbert](metodo_de_Hilbert.png)
+
+Para cada radio se calcula el centroide, si el punto está dentro del polígono, 
+o un punto dentro de la superficie del polígono, si el centroide está fuera.
+Se crea una grilla de tamaño $`2^n`$x$`2^n`$ que incluya a 
+todos los puntos del paso anterior, asegurándonos de que 
+no haya más de un punto en una misma celda de la grilla. 
+Se crea una curva de Hilbert y se indexan las celdas.
+De esta manera, cada radio tendrá asignado un número del índice. 
+Se ordenan los radios según este índice, se asigna el primer radio al primer cluster, 
+y se añaden radios según el orden del índice 
+hasta llegar a la cantidad de viviendas objetivo.
+Luego se toma el siguiente radio disponible según el índice, se asigna a un nuevo cluster y 
+se repite el proceso hasta que todos los radios hayan sido asignados a un cluster.
+El número de clusters a formar no es conocido a priori.
