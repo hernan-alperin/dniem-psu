@@ -154,3 +154,24 @@ hasta llegar a la cantidad de viviendas objetivo.
 Luego se toma el siguiente radio disponible según el índice, se asigna a un nuevo cluster y 
 se repite el proceso hasta que todos los radios hayan sido asignados a un cluster.
 El número de clusters a formar no es conocido a priori.
+
+
+## Método de Clustering Jerárquico a dos matrices de disimilaridad
+
+### Chavent, M., Kuentz-Simonet, V., Labenne, A., & Saracco, J. (2018). ClustGeo: an R package for hierarchical clustering with spatial constraints. 
+
+Este método considera dos medidas de disimilaridad entre radios: 
+Una matriz de distancias entre los centroides y 
+una matriz de distancias entre la variable de tamaño de cada radio. 
+El parámetro $`\alpha`$ indica la importancia de una medida por sobre la otra.
+Este método requiere que le proporcionen a priori el número $`K`$ de clusters a ser formados 
+(Calculado como cantidad de viviendas total sobre el total de viviendas objetivo, 
+lo que no asegura que cada cluster alcance el tamaño deseado).
+Para un $`\alpha`$ y $`K`$ dados, sea una partición $`P_k = (C_1, C_2, \dots, C_K)`$ 
+de los clusters.
+Se presentan las medidas de heterogeidad pseudo-inercia de Ck y Pk:
+
+```math
+I_\alpha(C_k^\alpha)
+
+```
