@@ -90,7 +90,7 @@ Este proceso se itera $`n`$ = 300 veces, es decir,
 se obtienen $`n`$ configuraciones de clustering 
 (notar que el número de clusters puede variar en cada iteración, pues no es conocido a priori). 
 
-Para cada una se calcula la suma de cuadrados intraclase, definida como
+Para cada una (iteración?) se calcula la suma de cuadrados intraclase, definida como
 
 ```math
 SCW = \sum_{k=1}^L \frac{x_{\cdot\cdot}}{x_{\cdot k}}
