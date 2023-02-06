@@ -197,7 +197,7 @@ la pseudo-inercia de $`W(P_{n-1})`$.
 De esta forma, se obtiene una partición con un cluster menos
 
 ```math
- P_{n-1}^\alpha = \left{ C_1, \dots, C_{n-1} / \mathrm{min}\quad (W^\alpha(P_n) – W^\alpha(P_{n-1})) \right}
+ P_{n-1}^\alpha = \left{ C_1, \cdots, C_{n-1} / \mathrm{min}\quad (W^\alpha(P_n) – W^\alpha(P_{n-1})) \right}
 ```
 
 El algoritmo une clusters minimizando la diferencia 
