@@ -202,3 +202,19 @@ De esta forma, se obtiene una partición con un cluster menos
 ```
 El algoritmo une clusters minimizando la diferencia 
 de pseudo-inercias $`W(P)`$ hasta obtener una partición de $`K`$ clusters.
+
+# Aplicación sobre localidad Rosario
+
+## Tabla 1. Comparación de los métodos de agrupamiento
+
+|Método  | Disc. | Cant.vert | Prom. radios | Cant.clus | Cant.clus.chicos | min.viv | max.viv | prom.viv | cv.viv | ssw.rel |
+|--------|-------|-----------|--------------|-----------|------------------|---------|---------|----------|--------|---------|
+| UltraClusters | 32 |     4 |      4.40    |       243 |              26  |     753 |    1750 |   1193.3 |  17.1% |   38.1% |
+| Elliot |   61  |         4 |      4.19    |       255 |               1  |     780 |    1542 |   1137.2 |   9.0% |   42.3% |
+| ElliotCont | 54 |        2 |      4.21    |       254 |               1  |     321 |    1545 |   1141.6 |  10.3% |   42.8% |
+| Hilbert |  64  |        15 |      4.23    |       253 |               1  |     478 |    1504 |   1146.2 |   9.2% |   37.7% |
+| Jerárquico | 67 |       26 |      3.69    |       290 |             158  |      16 |    2481 |    999.9 |  52.5% |   31.8% |
+| EHill  |   98  |         8 |      4.19    |       255 |             122  |     476 |    2668 |   1137.2 |  32.8% |   56.7% |
+| MaxHill |  63  |        17 |      4.97    |       215 |              55  |     604 |    2008 |   1348.7 |  28.4% |   52.9% |
+
+
