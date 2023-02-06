@@ -60,8 +60,7 @@ que deben incorporarse explícitamente las restricciones de continuidad y tamañ
 el algoritmo es muy dependiente de la asignación de clusters inicial.
 La suma de cuadrados intracluster que utiliza el método “hill climbing” 
 es la suma de cuadrados de muestreo PPS, 
-donde 
-![fórmulas](https://gitlab.indec.gob.ar/halperin/dniem-psu/blob/master/formulas%20hill%20climbing.md).
+ver [fórmulas](https://gitlab.indec.gob.ar/halperin/dniem-psu/blob/master/formulas%20hill%20climbing.md).
 
 La variante ensayada para armar clusters de radios fue utilizar el algoritmo “Hill Climbing” 
 con restricciones de tamaño, contigüidad y compacticidad para mejorar 
