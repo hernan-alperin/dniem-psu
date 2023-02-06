@@ -111,4 +111,4 @@ Pasa de una grilla bidimensional de tamaño $`2^n`$x$`2^n`$ a
 una lista de bloques vecinos identificados por un número índice 
 (Índice de Hilbert).
 
-![Figura. Método de Hilbert](metodo_de_Hilbert.png)
+
