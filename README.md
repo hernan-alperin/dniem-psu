@@ -172,6 +172,6 @@ de los clusters.
 Se presentan las medidas de heterogeidad pseudo-inercia de Ck y Pk:
 
 ```math
-I_\alpha(C_k^\alpha)
+I_\alpha(C_k^\alpha) = (1 - \alpha)\sum_{i \in C_k^\alpha}\sum_{j \in C_k^\alpha}
 
 ```
