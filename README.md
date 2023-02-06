@@ -99,3 +99,15 @@ SCW = \sum_{k=1}^L \frac{x_{\cdot\cdot}}{x_{\cdot k}}
 ```
 
 
+
+...
+
+## Método de Hilbert
+### Kali, J., Krenzke, T., Chen, Y., Chen, A., & Green, J. Evaluation of Methods to Form Segments from Census Blocks in Area Sample Designs.
+
+La Curva de Hilbert es una curva de “llenado de espacios”. 
+Pasa de una grilla bidimensional de tamaño $`2^n`$x$`2^n`$ a 
+una lista de bloques vecinos identificados por un número índice 
+(Índice de Hilbert).
+
+
