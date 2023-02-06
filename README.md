@@ -118,7 +118,12 @@ del $`j`$-ésimo radio del cluster $`k`$,
 y_{\cdot k} = \sum_{j=1}^{N_k} y_{jk}
 ```
 
-...
+La variante ensayada para armar clusters de radios 
+fue utilizar el algoritmo “Hill Climbing” con restricciones de 
+tamaño, contigüidad y compacticidad para mejorar la heterogeneidad de los clusters 
+resultantes de los métodos de Elliot (*EHill*) y de MaxP + programa lineal (*MaxHill*). 
+Se eligieron estos métodos como inicio del “Hill Climbing” 
+porque forman relativamente pocos clusters discontinuos.
 
 ## Método de Hilbert
 ### Kali, J., Krenzke, T., Chen, Y., Chen, A., & Green, J. Evaluation of Methods to Form Segments from Census Blocks in Area Sample Designs.
