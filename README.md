@@ -186,4 +186,19 @@ $`\mu_k`$ es la suma de los pesos del cluster $`k`$,
 $`d_{0,ij}`$ y $`d_{1,ij}`$ son las medidas de disimilitud
 de los radios $`i,j`$.
 
+Mientras más grande sea $`I(C_k)`$, mayor heterogeneidad habrá dentro del cluster.
 
+Mientras más pequeño sea $`W(P_k)`$, más homogéneos serán los clusters entre sí.
+
+El algoritmo parte de tomar cada radio como un cluster, 
+y en cada paso une a los dos clusters $`C_i`$ y $`C_j`$ 
+de manera que minimice la diferencia entre la pseudo-inercia $`W(P_n)`$ y 
+la pseudo-inercia de $`W(P_{n-1})`$.
+De esta forma, se obtiene una partición con un cluster menos
+
+```math
+ P_{n-1}^\alpha = \left{ C_1, \dots, C_{n-1} / \mathrm{min}\quad (W^\alpha(P_n) – W^\alpha(P_{n-1})) \right}
+```
+
+El algoritmo une clusters minimizando la diferencia 
+de pseudo-inercias $`W(P)`$ hasta obtener una partición de $`K`$ clusters.
