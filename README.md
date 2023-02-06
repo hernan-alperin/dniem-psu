@@ -174,5 +174,16 @@ Se presentan las medidas de heterogeidad pseudo-inercia de Ck y Pk:
 ```math
 I_\alpha(C_k^\alpha) = (1 - \alpha)\sum_{i \in C_k^\alpha}\sum_{j \in C_k^\alpha}\frac{w_iw_j}{2\mu_k^\alpha}d_{0,ij}^2
                      +      \alpha \sum_{i \in C_k^\alpha}\sum_{j \in C_k^\alpha}\frac{w_iw_j}{2\mu_k^\alpha}d_{1,ij}^2
-
+\mathrm{,}
 ```
+
+```math
+W_\alpha(\wp_K^\alpha) = \sum_{k=1}^K I_\alpha(C_k^\alpha)\mathrm{.}
+```
+
+Donde $`w_i`$ es el peso del radio $`i`$ dentro del cluster $`k`$,
+$`\mu_k`$ es la suma de los pesos del cluster $`k`$, 
+$`d_{0,ij}`$ y $`d_{1,ij}`$ son las medidas de disimilitud
+de los radios $`i,j`$.
+
+
