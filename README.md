@@ -86,8 +86,8 @@ entre los disponibles.
 Un radio no puede pertenecer a más de un cluster.
 La creación de clusters continúa hasta que no haya más radios disponibles o 
 hasta que los radios restantes no puedan cumplir el requerimiento para conformar un nuevo cluster.
-Este proceso se itera n = 300 veces, es decir, 
-se obtienen n configuraciones de clustering 
+Este proceso se itera $`n`$ = 300 veces, es decir, 
+se obtienen $`n`$ configuraciones de clustering 
 (notar que el número de clusters puede variar en cada iteración, pues no es conocido a priori). 
 
 Para cada una se calcula la suma de cuadrados intraclase, definida como
@@ -98,7 +98,25 @@ SCW = \sum_{k=1}^L \frac{x_{\cdot\cdot}}{x_{\cdot k}}
       \left( \frac{x_{\cdot k}}{x_{jk}} y_{jk} - y_{i\cdot k} \right)^2
 ```
 
+donde 
+$`L`$, la cantidad de clusters a formar,
+$`N_k`$, la cantidad de radios en el $`k`$-ésimo cluster,
+$`x_{jk}`$, la medida de tamaño del $`j`$-ésimo radio en el $`k`$-ésimo cluster,
 
+```math
+x_{\cdot k} = \sum_{j=1}^{N_k} x_{jk}
+\quad
+\mathrm{,}
+\qquad
+x_{\cdot\cdot} = \sum_{k=1}^L \sum_{j=1}^{N_k} x_{jk}
+\quad
+\mathrm{,}
+```
+$`y_{jk}`$, el valor observado para la variable (normalmente "desocupado") 
+del $`j`$-ésimo radio del cluster $`k`$,
+```math
+y_{\cdot k} = \sum_{j=1}^{N_k} y_{jk}
+```
 
 ...
 
