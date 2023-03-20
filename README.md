@@ -95,7 +95,7 @@ Para cada una (iteración?) se calcula la suma de cuadrados intraclase, definida
 ```math
 SCW = \sum_{k=1}^L \frac{x_{\cdot\cdot}}{x_{\cdot k}}
       \sum_{j=1}^{N_k} \frac{x_{jk}}{x_{\cdot k}}
-      \left( \frac{x_{\cdot k}}{x_{jk}} y_{jk} - y_{i\cdot k} \right)^2
+      \left( \frac{x_{\cdot k}}{x_{jk}} y_{jk} - y_{\cdot k} \right)^2
 ```
 
 donde 
