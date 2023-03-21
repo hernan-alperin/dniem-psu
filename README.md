@@ -217,4 +217,95 @@ de pseudo-inercias $`W(P)`$ hasta obtener una partición de $`K`$ clusters.
 | EHill  |   98  |         8 |      4.19    |       255 |             122  |     476 |    2668 |   1137.2 |  32.8% |   56.7% |
 | MaxHill |  63  |        17 |      4.97    |       215 |              55  |     604 |    2008 |   1348.7 |  28.4% |   52.9% |
 
+$`\div`$: Cantidad de clusters discontinuos.  
+$`\Join`$: Cantidad de clusters que tienen al menos un radio unido por vértice.  
+$`\frac{N}{K}`$: Promedio de radios por cluster  
+$`K`$: Cantidad de clusters formados  
+$`|K|_r < n`$: clusters chicos  
+$`\text{min}_K |K|_v`$: cantidad de viviendas en el cluster más pequeño  
+$`\text{max}_K |K|_v`$: cantidad de viviendas en el cluster más grande.  
+Prom.viv: promedio de viviendas por cluster  
+Cv: coeficiente de variación de cantidad de viviendas por cluster  
+Ssw.rel: Suma de cuadrados intraclase, relativa a la suma de cuadrados total  
+
+Se busca que
+* haya nula cantidad de clusters discontinuos, 
+* el número de viviendas esté entre 900 y 1350 en cada cluster, 
+* el coeficiente de variación del tamaño de los clusters sea bajo, y 
+* la ssw.rel sea alta.
+
+Se observa que la elección de un método por sobre otro 
+no está claramente definida, 
+ya que distintas medidas favorecen a distintos métodos.
+
+# Postprocesamiento: El algoritmo sparky
+
+Como se observa en la Tabla 1 
+los distintos métodos tienen en mayor o menor medida dos inconvenientes principales: 
+los clusters discontinuos y la gran variabilidad en la cantidad de 
+viviendas habitadas que los componen 
+(incluso estando por debajo del tamaño objetivo en muchos casos). 
+Para tratar de maximizar la viabilidad de los distintos métodos se generó 
+un algoritmo de postprocesamiento en 4 pasos que trata de reducir la magnitud de estos problemas, 
+donde los pasos 1 y 2 están orientados a asegurar la continuidad de todos los clusters, 
+mientras que los pasos 3 y 4 buscan reducir el cv del tamaño de los clusters.
+Los clusters discontinuos se pueden clasificar en aquellos clusters completamente continuos 
+salvo por un único radio aislado (Grafico 1) 
+y en los que están formados por distintos grupos de radios separados (Grafico 2).
+
+## Gráfico 1. 
+
+![Ejemplo de cluster contiguo salvo por un único radio separado](Grafico_1.png)
+
+## Gráfico 2.
+
+![Ejemplo de cluster con varios aglomerados de radios discontinuos](Grafico_2.png)
+
+# El algoritmo Sparky:
+
+* **Paso 1 – Arrasar radios aislados:**  
+Se identifican los clusters con un único radio discontinuo y 
+se asigna el radio discontinuo al cluster vecino más cercano al tamaño objetivo. 
+Este paso resuelve la discontinuidad de estos clusters 
+a cambio de una disminución en la cantidad de viviendas que lo componen.
+
+* **Paso 2 – Devorar clusters discontinuos:** 
+Los clusters discontinuos que no fueron tratados en el paso 1 son totalmente disueltos 
+asignando cada radio que los compone al cluster vecino más cercano al tamaño objetivo. 
+Con este paso la cantidad de clusters total disminuye y los clusters que recibieron 
+radios nuevos pueden llegar a excederse demasiado del tamaño objetivo.
+
+* **Paso 3 – Darle sopa a los clusters chicos:**  
+En este paso se hacen crecer a los cluster que hayan quedado por más 
+de un 10% debajo del tamaño objetivo. 
+Cada cluster que entre a este paso va a tomar radios de los vecinos, 
+basándose en un orden de prioridad que depende del tamaño del cluster vecino y 
+del radio a tomar, hasta llegar al 75% del tamaño mínimo 
+(90% del tamaño objetivo). 
+Si un cluster pequeño está rodeado de otros clusters que por tamaño 
+no pueden entregar radios se saltea este paso.
+
+* **Paso 4:**  
+Resuelta la discontinuidad de los clusters y eliminado, en lo posible, 
+aquellos clusters que estaban muy por debajo del objetivo en los pasos anteriores 
+solo queda tratar de homogeneizar la población de los clusters que quedan. 
+Para esto se recorre uno por uno cada cluster. 
+Si el cluster está más de un 10% por debajo del tamaño objetivo trata de robar 
+un radio de un cluster vecino y si esta más de un 35% por encima del tamaño objetivo 
+trata de entregar un radio a alguno de los vecinos. 
+Este proceso se hace iterativamente 10 veces.
+
+## Tabla 2. Comparación de los métodos de agrupamiento sparkeados
+
+| Método  | $`\div`$ | $`\Join`$ |  $`\frac{N}{K}`$  | $`K`$ | $`\|K\|_r < n`$ | min.viv | max.viv | prom.viv | cv.viv | ssw.rel |
+|---------|----------|-----------|-------------------|-------|-----------------|---------|---------|----------|--------|---------|
+| UltraClusters |  0 |        34 |      4.55         |   235 |              4  |     946 |    1496 |   1233.9 |   9.5% |   39.3% |
+| Elliot  |        0 |        28 |      4.35         |   246 |             20  |     768 |    1496 |   1178.8 |  10.1% |   39.8% |
+| ElliotCont |     0 |        24 |      4.40         |   243 |             12  |     902 |    1478 |   1193.3 |   9.5% |   40.7% |
+| Hilbert |        0 |        34 |      4.33         |   247 |             13  |     903 |    1562 |   1174.0 |   9.3% |   36.4% |
+| Jerárquico |     0 |        61 |      4.02         |   266 |             79  |     105 |    1500 |   1090.1 |  15.2% |   37.1% |
+| EHill   |        0 |        63 |      4.77         |   224 |              4  |     902 |    1644 |   1294.5 |   9.5% |   44.1% |
+| MaxHill |        0 |        59 |      5.60         |   191 |              0  |    1028 |    1821 |   1518.2 |   7.9% |   46.4% |
+
+
 
